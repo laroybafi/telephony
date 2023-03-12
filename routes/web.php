@@ -49,7 +49,7 @@ Route::domain(config('app.admin_url'))->group(function(){
     Route::get('/call-logs', [VoiceLogController::class, 'getLogs'])->name('getLogs');
 });
 
-Route::domain(config('customer.admin_url'))->group(function(){
+Route::domain(config('app.customer_url'))->group(function(){
     Route::get('/customers-landing', [CustomersController::class, 'customer_landing_input_index'])->name('customers_landing');
     Route::post('/customers-landing', [CustomersController::class, 'store'])->name('customers_store');
 
