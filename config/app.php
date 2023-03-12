@@ -56,10 +56,6 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'admin_url' => env('ADMIN_URL', 'https://admin.telephony.my.id'),
-
-    'customer_url' => env('CUSTOMER_URL', 'https://customer.telephony.my.id'),
-
     'asset_url' => env('ASSET_URL'),
 
     /*
