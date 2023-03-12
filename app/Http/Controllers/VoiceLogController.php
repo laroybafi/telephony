@@ -23,12 +23,12 @@ class VoiceLogController extends Controller
 
         $calls = $twilio->calls
                 ->read([], 20);
-
+        //dd($calls);
         $this->client->calls->read();
 
-        foreach ($calls as $record) {
-            print($record->sid);
-        }
+        return view('call-logs', [
+            'calls' => $calls,
+        ]);
 
     }
 
