@@ -142,8 +142,6 @@
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
                                 <input type="text" class="form-control" name="email" placeholder="Email">
-                                <label for="phone">Phone Number:</label>
-<input type="tel" id="phone" name="phone" placeholder="Enter phone number">
                             </div>
                             <div>
                                 <p>Disclaimer: <br>
