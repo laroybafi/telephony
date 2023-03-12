@@ -296,7 +296,7 @@
                                 method="post">
                                 @csrf
                                 @method('PUT')
-                                <div class="mb-3 row">
+                                <div class="mb-3 row" style="display:block;">
                                     <label class="col-3 col-form-label">Call Result 1</label>
                                     <div class="col">
                                         <select class="form-select" name="call_result_1" id="callResult1-dropdown"
@@ -306,7 +306,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
+                                <div class="mb-3 row" style="display:none;" id="call_result_selection2">
                                     <label class="col-3 col-form-label">Call Result 2</label>
                                     <div class="col">
                                         <select class="form-select" name="call_result_2" id="callResult2-dropdown"
@@ -315,7 +315,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
+                                <div class="mb-3 row" style="display:none;" id="call_result_selection3">
                                     <label class="col-3 col-form-label">Call Result 3</label>
                                     <div class="col">
                                         <select class="form-select" name="call_result_3" id="callResult3-dropdown"
@@ -324,7 +324,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
+                                <div class="mb-3 row" style="display:none;" id="call_result_selection4">
                                     <label class="col-3 col-form-label">Call Result 4</label>
                                     <div class="col">
                                         <select class="form-select" name="call_result_4" id="callResult4-dropdown"
@@ -333,14 +333,14 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-3" style="display:block;">
                                     <label class="col-3 col-form-label">Product</label>
                                     <div class="col">
                                         <input type="text" class="form-control" name="product"
                                             value="{{ $customer-> product}}">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-3" style="display:block;">
                                     <label class="col-3 col-form-label">Notes</label>
                                     <div class="col">
                                         <textarea class="form-control" name="notes"
@@ -369,6 +369,4 @@
         </div>
     </div>
 </div>
-</div>
-
 @endsection

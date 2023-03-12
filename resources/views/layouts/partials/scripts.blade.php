@@ -167,11 +167,13 @@
         const selectedValue = callResult1Dropdown.value;
         callResult2Dropdown.innerHTML = '';
         if (selectedValue === 'Connected') {
+            document.getElementById("call_result_selection2").style.display = 'block';
             callResult2Dropdown.innerHTML = `
             <option value="Contacted">Contacted</option>
             <option value="Uncontacted">Uncontacted</option>
     `;
         } else if (selectedValue === 'Unconnected') {
+            document.getElementById("call_result_selection2").style.display = 'block';
             callResult2Dropdown.innerHTML = `
             <option value="Voicemail">Voicemail</option>
             <option value="Tidak terdaftar">Tidak terdaftar</option>
@@ -184,12 +186,14 @@
         const selectedValue = callResult2Dropdown.value;
         callResult3Dropdown.innerHTML = '';
         if (selectedValue === 'Contacted') {
+            document.getElementById("call_result_selection3").style.display = 'block';
             callResult3Dropdown.innerHTML = `
             <option value="Tidak Minat">Tidak Minat</option>
             <option value="Warm Leads">Warm Leads</option>
             <option value="">Hot Leads</option>
     `;
         } else if (selectedValue === 'Uncontacted') {
+            document.getElementById("call_result_selection3").style.display = 'block';
             callResult3Dropdown.innerHTML = `
             <option value="Tidak diangkat">Tidak diangkat</option>
             <option value="Sibuk">Sibuk</option>
@@ -203,6 +207,7 @@
         const selectedValue = callResult3Dropdown.value;
         callResult4Dropdown.innerHTML = '';
         if (selectedValue === 'Tidak Minat') {
+            document.getElementById("call_result_selection4").style.display = 'block';
             callResult4Dropdown.innerHTML = `
             <option value="Angsuran Tinggi">Angsuran Tinggi</option>
             <option value="Bunga Tinggi">Bunga Tinggi</option>
@@ -219,6 +224,7 @@
             <option value="Sudah diproses oleh Cabang/TMO lain">Sudah diproses oleh Cabang/TMO lain</option>
     `;
         } else if (selectedValue === 'Warm Leads') {
+            document.getElementById("call_result_selection4").style.display = 'block';
             callResult4Dropdown.innerHTML = `
             <option value="M1 - Customer minat dikirim hitungan by WA">M1 - Customer minat dikirim hitungan by WA</option>
             <option value="M2 - Customer minat, sudah bertanya-tanya, ingin diskusi dengan keluarga">M2 - Customer minat, sudah bertanya-tanya, ingin diskusi dengan keluarga</option>
