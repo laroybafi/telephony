@@ -284,7 +284,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-3 col-form-label" for="phone_number">Phone Number</label>
                                     <div class="col-6">
-                                        <input type="password" class="form-control" name="phone_number" id="phone_number"
+                                        <input type="tel" class="form-control" name="phone_number" id="phone_number"
                                             aria-describedby="phoneHelp" value="{{$customer->phone_number}}">
                                     </div>
                                     <div class="col-3">
