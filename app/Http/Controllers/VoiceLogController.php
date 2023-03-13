@@ -32,4 +32,16 @@ class VoiceLogController extends Controller
 
     }
 
+    public function getLogsDetail($sid)
+    {
+        $twilio = new Client($this->account_sid, $this->auth_token);
+
+        $calls = $twilio->calls($sid)
+               ->fetch();
+        //dd($calls);
+        return view('call-logs-detail', [
+            'calls' => $calls,
+        ]);
+    }
+
 }
