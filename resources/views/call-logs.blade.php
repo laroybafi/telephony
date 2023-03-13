@@ -38,13 +38,13 @@
                     <tbody>
                         @foreach ($calls as $call)
                         <tr>
-                            <td> {{ $call->sid }} </td>
-                            <td> {{ $call->duration }} S</td>
-                            <td> {{ $call->startTime->format('Y-m-d H:i:s') }} </td>
-                            <td> {{ $call->endTime->format('Y-m-d H:i:s') }} </td>
-                            <td> {{ $call->from }} </td>
-                            <td> {{ $call->to }} </td>
-                            <td> {{ $call->status}} </td>
+                            <td>{{ $call->sid }} </td>
+                            <td>{{ $call->duration }}scnd</td>
+                            <td>{{ $call->startTime->format('Y-m-d H:i:s') }} </td>
+                            <td>{{ $call->endTime->format('Y-m-d H:i:s') }} </td>
+                            <td>{{ $call->from }} </td>
+                            <td>{{ $call->to }} </td>
+                            <td>{{ $call->status}} </td>
                             <td><a href="{{ route('logs_detail', $call->sid) }}" class="btn btn-success">Detail</a></td>
                         </tr>
                         @endforeach
