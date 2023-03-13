@@ -22,7 +22,7 @@ class VoiceLogController extends Controller
         $twilio = new Client($this->account_sid, $this->auth_token);
 
         $calls = $twilio->calls
-                ->read([], 20);
+                ->read([]);
         //dd($calls);
         $this->client->calls->read();
 

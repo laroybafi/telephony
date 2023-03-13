@@ -131,8 +131,8 @@
                             <a class="dropdown-item" href="{{ route('customers_landing') }}">
                                 Appointment
                             </a>
-                            <a class="dropdown-item" href="{{ route('call_test') }}">
-                                Call Test
+                            <a class="dropdown-item" href="{{ route('get_logs') }}">
+                                Call Logs
                             </a>
                         </div>
                     </li>
