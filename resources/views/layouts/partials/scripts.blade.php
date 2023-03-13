@@ -234,14 +234,3 @@
     });
 
 </script>
-<script>
-    var phoneInput = document.getElementById("phone_number");
-    phoneInput.addEventListener("input", function () {
-        var phoneValue = phoneInput.value;
-        if (phoneValue.length >= 4) {
-            var maskedValue = phoneValue.substring(0, phoneValue.length - 4) + "****";
-            phoneInput.value = maskedValue;
-        }
-    });
-
-</script>

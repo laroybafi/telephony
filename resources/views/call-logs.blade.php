@@ -39,7 +39,7 @@
                         @foreach ($calls as $call)
                         <tr>
                             <td> {{ $call->sid }} </td>
-                            <td> {{ $call->duration }} </td>
+                            <td> {{ $call->duration }} S</td>
                             <td> {{ $call->startTime->format('Y-m-d H:i:s') }} </td>
                             <td> {{ $call->endTime->format('Y-m-d H:i:s') }} </td>
                             <td> {{ $call->from }} </td>

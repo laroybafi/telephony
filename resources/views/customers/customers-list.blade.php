@@ -32,9 +32,7 @@
                             <th>City</th>
                             <th>Brand</th>
                             <th>Type</th>
-                            <th>Model</th>
                             <th>Source</th>
-                            <th>Segment</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -48,9 +46,7 @@
                             <td> {{ $customer->acc_branch }} </td>
                             <td> {{ $customer->brand }} </td>
                             <td> {{ $customer->type }} </td>
-                            <td> {{ $customer->model }} </td>
-                            <td> </td>
-                            <td></td>
+                            <td> Digital </td>
                             <td><a href="{{ route('customers_detail', $customer->id) }}" class="btn btn-success">Detail</a></td>
                         </tr>
                         @endforeach
