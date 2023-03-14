@@ -40,8 +40,8 @@
                         <tr>
                             <td>{{ $call->sid }} </td>
                             <td>{{ $call->duration }}scnd</td>
-                            <td>{{ $call->startTime->format('Y-m-d H:i:s') }} </td>
-                            <td>{{ $call->endTime->format('Y-m-d H:i:s') }} </td>
+                            <td>{{ $call->startTime?->format('Y-m-d H:i:s') ?? ''}} </td>
+                            <td>{{ $call->endTime?->format('Y-m-d H:i:s') ?? '' }} </td>
                             <td>{{ $call->from }} </td>
                             <td>{{ $call->to }} </td>
                             <td>{{ $call->status}} </td>

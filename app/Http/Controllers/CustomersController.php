@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CustomersController extends Controller
@@ -12,6 +13,7 @@ class CustomersController extends Controller
         //dd(Customer::get());
         return view('customers.customers-list', [
             'customers' => Customer::get(),
+            'users' => User::get(),
         ]);
     }
 
@@ -24,6 +26,7 @@ class CustomersController extends Controller
     public function store(Request $request)
     {
         //dd('sudah ok');
+        $prefix = '+62';
         $customer = new Customer();
         $customer->loan_amount = $request->loan_amount;
         $customer->loan_purpose = $request->loan_purpose;
@@ -35,7 +38,7 @@ class CustomersController extends Controller
         $customer->acc_branch = $request->acc_branch;
         $customer->refferal_code = $request->refferal_code;
         $customer->name = $request->name;
-        $customer->phone_number = $request->phone_number;
+        $customer->phone_number = $prefix.$request->phone_number;
         $customer->email = $request->email;
 
         $customer->save();
@@ -47,6 +50,8 @@ class CustomersController extends Controller
     {
         //dd($id);
         $customer = Customer::find($id);
+        $maskedPhone = substr($customer->phone_number, 0, 3) . str_repeat('*', strlen($customer->phone_number) - 7) . substr($customer->phone_number, -4);
+        $customer->phone_number = $maskedPhone;
 
         return view('customers.customers-detail', [
             'customer' => $customer,
@@ -86,7 +91,6 @@ class CustomersController extends Controller
         $customer->notes = $request->notes;
         $customer->blacklist = $request->blacklist;
        
-
         $customer->save();
 
         return redirect()->back();

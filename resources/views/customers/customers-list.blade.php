@@ -33,6 +33,7 @@
                             <th>Brand</th>
                             <th>Type</th>
                             <th>Source</th>
+                            <th>Caller</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -47,10 +48,11 @@
                             <td> {{ $customer->brand }} </td>
                             <td> {{ $customer->type }} </td>
                             <td> Digital </td>
-                            <td><a href="{{ route('customers_detail', $customer->id) }}" class="btn btn-success">Detail</a></td>
+                            <td> </td>
+                            <td><a href="{{ route('customers_detail', $customer->id) }}"
+                                    class="btn btn-success">Detail</a></td>
                         </tr>
                         @endforeach
-
                     </tbody>
                 </table>
             </div>

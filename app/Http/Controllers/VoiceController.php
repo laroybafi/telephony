@@ -44,7 +44,7 @@ class VoiceController extends Controller
           );
 
         if($call) {
-          echo 'Call initiated successfully';
+          return redirect()->back();
         } else {
           echo 'Call failed!';
         }
