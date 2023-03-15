@@ -81,7 +81,7 @@
                         <div class="row mb-3">
                             <label class="col-3 col-form-label">Duration</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="duration" value="{{ $calls->duration }}"
+                                <input type="text" class="form-control" name="duration" value="{{ $calls->duration }} second"
                                     disabled>
                             </div>
                         </div>

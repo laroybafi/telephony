@@ -48,9 +48,14 @@
                             <td> {{ $customer->brand }} </td>
                             <td> {{ $customer->type }} </td>
                             <td> Digital </td>
-                            <td> </td>
-                            <td><a href="{{ route('customers_detail', $customer->id) }}"
-                                    class="btn btn-success">Detail</a></td>
+                            <td> {{ $customer->caller}} </td>
+                            <td>@if ($customer->caller)
+                            <a href="{{ route('customers_detail', $customer->id) }}"
+                                    class="btn btn-secondary disabled" disabled>Detail</a>
+                                @else
+                                <a href="{{ route('customers_detail', $customer->id) }}"
+                                    class="btn btn-primary">Detail</a>
+                                @endif</td>
                         </tr>
                         @endforeach
                     </tbody>

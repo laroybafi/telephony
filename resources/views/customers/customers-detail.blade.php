@@ -285,7 +285,7 @@
                                     <label class="col-3 col-form-label" for="phone_number">Phone Number</label>
                                     <div class="col-6">
                                         <input type="tel" class="form-control" name="phone_number" id="phone_number"
-                                            aria-describedby="phoneHelp" value="{{$customer->phone_number}}">
+                                            aria-describedby="phoneHelp" value="{{$customer->phone_number}}" disabled>
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-success">Call</button>
@@ -354,6 +354,15 @@
                                             <input class="form-check-input" type="checkbox" checked>
                                             <span class="form-check-label"></span>
                                         </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row" style="" id="call_result_selection2">
+                                    <label class="col-3 col-form-label">Caller</label>
+                                    <div class="col">
+                                        @if (Auth::check())
+                                        <input type="text" class="form-control" name="caller" id="caller" value="{{ Auth::user()->name }}">
+                                        @endif
+                                        </input>
                                     </div>
                                 </div>
                         </div>

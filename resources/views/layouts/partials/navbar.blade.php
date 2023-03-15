@@ -6,7 +6,8 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href=".">
-                <img src="{{ asset('static/image-telephony.png')}}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                <img src="{{ asset('static/image-telephony.png')}}" width="110" height="32" alt="Tabler"
+                    class="navbar-brand-image">
             </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
@@ -50,7 +51,9 @@
                         <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                     </svg>
                     <div class="d-none d-xl-block ps-2">
-                        <div>Admin YXNR</div>
+                        <div>@if (Auth::check())
+                            {{ Auth::user()->name }}
+                            @endif</div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -107,7 +110,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('get_logs') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />

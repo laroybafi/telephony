@@ -64,6 +64,7 @@ return new class extends Migration
             $table->string('product')->nullable()->default(null);
             $table->string('notes')->nullable()->default(null);
             $table->boolean('blacklist')->nullable()->default(null);
+            $table->string('caller')->nullable()->default(null);
 
             $table->timestamps();
         });

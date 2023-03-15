@@ -8,14 +8,6 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
-    public function customer_list_index()
-    {
-        //dd(Customer::get());
-        return view('customers.customers-list', [
-            'customers' => Customer::get(),
-            'users' => User::get(),
-        ]);
-    }
 
     public function customer_landing_input_index()
     {
@@ -46,15 +38,25 @@ class CustomersController extends Controller
         return redirect()->back();
     }
 
+    public function customer_list_index()
+    {
+        //dd(Customer::get());
+        return view('customers.customers-list', [
+            'customers' => Customer::get(),
+            'users' => User::get(),
+        ]);
+    }
+
     public function customer_detail_index($id)
     {
         //dd($id);
         $customer = Customer::find($id);
         $maskedPhone = substr($customer->phone_number, 0, 3) . str_repeat('*', strlen($customer->phone_number) - 7) . substr($customer->phone_number, -4);
         $customer->phone_number = $maskedPhone;
-
+        //dd(User::get());
         return view('customers.customers-detail', [
             'customer' => $customer,
+            'users' => User::get(),
         ]);
     }
 
@@ -90,6 +92,7 @@ class CustomersController extends Controller
         $customer->product = $request->product;
         $customer->notes = $request->notes;
         $customer->blacklist = $request->blacklist;
+        $customer->caller = $request->caller;
        
         $customer->save();
 
