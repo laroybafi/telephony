@@ -52,7 +52,8 @@ class VoiceController extends Controller
           );
 
         if($call) {
-          return view('call-process');
+          return redirect()->route('call_process')->withHeaders(['target' => '_blank']);
+          //return view('call-process');
         } else {
           echo 'Call failed!';
         }
