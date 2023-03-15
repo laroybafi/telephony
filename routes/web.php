@@ -35,6 +35,7 @@ Route::post('/customers-landing', [CustomersController::class, 'store'])->name('
 Route::post('/call/{id}', [VoiceController::class, 'initiateCall'])->name('initiate_call');
 Route::get('/call-logs', [VoiceLogController::class, 'getLogs'])->name('get_logs');
 Route::get('/call-logs-detail/{sid}', [VoiceLogController::class, 'getLogsDetail'])->name('logs_detail');
+Route::get('/call-process', [VoiceController::class, 'call_process'])->name('call_process');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -20,6 +20,12 @@ class VoiceController extends Controller
     $this->client = new Client($this->account_sid, $this->auth_token);
   }
 
+    public function call_process()
+    {
+        //dd(Customer::get());
+        return view('call-process');
+    }
+
   /**
    * Making an outgoing call
    */
@@ -46,7 +52,7 @@ class VoiceController extends Controller
           );
 
         if($call) {
-          return redirect()->back()->with('success', 'Call triggered successfully.');
+          return view('call-process');
         } else {
           echo 'Call failed!';
         }
