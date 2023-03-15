@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Twilio\Exceptions\RestException;
 use Twilio\Rest\Client;
+use App\Models\Customer;
 
 class VoiceController extends Controller
 {
@@ -22,21 +23,22 @@ class VoiceController extends Controller
   /**
    * Making an outgoing call
    */
-  public function initiateCall(Request $request) {
+  public function initiateCall(Request $request,$id) {
     // Validate form input
-    $this->validate($request, [
-      'phone_number' => 'required|string',
-    ]);
+    $customer = Customer::find($id);
+    $cust_phone_number = $customer->phone_number;
+
+    //dd($cust_phone_number);
 
     try {
       //Lookup phone number to make sure it is valid before initiating call
-      $phone_number = $this->client->lookups->v1->phoneNumbers($request->phone_number)->fetch();
+      $phone_number = $this->client->lookups->v1->phoneNumbers($cust_phone_number)->fetch();
 
       // If phone number is valid and exists
       if($phone_number) {
         // Initiate call and record call
         $call = $this->client->account->calls->create(
-          $request->phone_number, // Destination phone number
+          $cust_phone_number, // Destination phone number
           $this->from, // Valid Twilio phone number
           array(
               "record" => True,
@@ -44,7 +46,7 @@ class VoiceController extends Controller
           );
 
         if($call) {
-          return redirect()->back();
+          return redirect()->back()->with('success', 'Call triggered successfully.');
         } else {
           echo 'Call failed!';
         }

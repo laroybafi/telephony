@@ -32,7 +32,7 @@ Route::put('/customers-detail/{id}/update_call_result', [CustomersController::cl
 Route::put('/customers-detail/{id}/update_simulasi', [CustomersController::class, 'update_simulasi'])->name('customers_update_simulasi');
 Route::get('/customers-landing', [CustomersController::class, 'customer_landing_input_index'])->name('customers_landing');
 Route::post('/customers-landing', [CustomersController::class, 'store'])->name('customers_store');
-Route::post('/call', [VoiceController::class, 'initiateCall'])->name('initiate_call');
+Route::post('/call/{id}', [VoiceController::class, 'initiateCall'])->name('initiate_call');
 Route::get('/call-logs', [VoiceLogController::class, 'getLogs'])->name('get_logs');
 Route::get('/call-logs-detail/{sid}', [VoiceLogController::class, 'getLogsDetail'])->name('logs_detail');
 

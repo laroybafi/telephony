@@ -52,7 +52,7 @@ class CustomersController extends Controller
         //dd($id);
         $customer = Customer::find($id);
         $maskedPhone = substr($customer->phone_number, 0, 3) . str_repeat('*', strlen($customer->phone_number) - 7) . substr($customer->phone_number, -4);
-        $customer->phone_number = $maskedPhone;
+        $customer->phone_number_masked = $maskedPhone;
         //dd(User::get());
         return view('customers.customers-detail', [
             'customer' => $customer,

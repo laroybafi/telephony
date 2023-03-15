@@ -270,7 +270,7 @@
                             <h3 class="card-title">Call Result</h3>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="{{ route('initiate_call') }}">
+                            <form method="post" action="{{ route('initiate_call', $customer->id) }}">
                                 @csrf
                                 @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -284,7 +284,11 @@
                                 <div class="mb-3 row">
                                     <label class="col-3 col-form-label" for="phone_number">Phone Number</label>
                                     <div class="col-6">
-                                        <input type="tel" class="form-control" name="phone_number" id="phone_number"
+                                        <input type="text" class="form-control" name="phone_number_masked" id="phone_number_masked"
+                                            aria-describedby="phoneHelp" value="{{$customer->phone_number_masked}}" disabled>
+                                    </div>
+                                    <div class="col-6" style="display:none;">
+                                        <input type="text" class="form-control" name="phone_number" id="phone_number"
                                             aria-describedby="phoneHelp" value="{{$customer->phone_number}}" disabled>
                                     </div>
                                     <div class="col-3">
@@ -356,7 +360,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="mb-3 row" style="" id="call_result_selection2">
+                                <div class="mb-3 row" style="display:none;" id="call_result_selection2">
                                     <label class="col-3 col-form-label">Caller</label>
                                     <div class="col">
                                         @if (Auth::check())
