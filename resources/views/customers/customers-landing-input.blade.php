@@ -48,12 +48,12 @@
                         <div class="card-body" style="margin:40px">
                             <p><i style="color:#2C598D">Informasi pinjaman yang diinginkan</i></p>
                             <div class="mb-3">
-                                <label class="form-label">Nilai Pinjaman</label>
+                                <label class="form-label required">Nilai Pinjaman</label>
                                 <input type="text" class="form-control" name="loan_amount"
                                     placeholder="Nilai pinjaman">
                             </div>
                             <div class="mb-3">
-                                <div class="form-label">Tujuan Pinjaman</div>
+                                <div class="form-label required">Tujuan Pinjaman</div>
                                 <select class="form-select" name="loan_purpose">
                                 <option value="" disabled selected>Tujuan Pinjaman</option>
                                     <option value="Travel">Travel</option>
@@ -65,16 +65,16 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <div class="form-label">Tenor</div>
+                                <div class="form-label required">Tenor</div>
                                 <select class="form-select" name="tenor">
                                     <option value="12">12</option>
                                     <option value="24">24</option>
                                     <option value="36">36</option>
                                 </select>
                             </div><br>
-                            <p><i style="color:#2C598D">Informasi mobil yang dimiliki</i></p>
+                            <p><i style="color:#2C598D ">Informasi mobil yang dimiliki</i></p>
                             <div class="mb-3">
-                                <div class="form-label">Brand</div>
+                                <div class="form-label required">Brand</div>
                                 <select class="form-select" name="brand" id="brand-dropdown">
                                     <option value="" disabled selected>Brand</option>
                                     <option value="Toyota">Toyota</option>
@@ -88,13 +88,13 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <div class="form-label">Tipe</div>
+                                <div class="form-label required">Tipe</div>
                                 <select class="form-select" name="type" id="type-dropdown">
                                 <option value="" disabled selected>Tipe</option>                                  
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <div class="form-label">Tahun</div>
+                                <div class="form-label required">Tahun</div>
                                 <select class="form-select" name="year">
                                     <option value="2019">2019</option>
                                     <option value="2020">2020</option>
@@ -105,7 +105,7 @@
                             </div> <br>
                             <p><i style="color:#2C598D">Lokasi Pengajuan</i></p>
                             <div class="mb-3">
-                                <div class="form-label">Provinsi</div>
+                                <div class="form-label required">Provinsi</div>
                                 <select class="form-select" name="province" id="province-dropdown">
                                 <option value="" disabled selected>Provinsi</option>
                                     <option value="DKI Jakarta & Banten">DKI Jakarta & Banten</option>
@@ -117,30 +117,30 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <div class="form-label">Cabang ACC</div>
+                                <div class="form-label required">Cabang ACC</div>
                                 <select class="form-select" name="acc_branch" id="branch-dropdown">
                                 <option value="" disabled selected>Cabang ACC</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Refferal Code</label>
+                                <label class="form-label required">Refferal Code</label>
                                 <input type="text" class="form-control" name="refferal_code"
                                     placeholder="Refferal Code">
                             </div> <br>
                             <p><i style="color:#2C598D">Isi Data Diri</i></p>
                             <div class="mb-3">
-                                <label class="form-label">Nama</label>
+                                <label class="form-label required">Nama</label>
                                 <input type="text" class="form-control" name="name" placeholder="Nama">
                             </div>
-                            <label class="form-label">Nomor HP</label>
+                            <label class="form-label required" >Nomor HP</label>
                             <div class="input-group mb-2">
                                 <span class="input-group-text">
                                     +62
                                 </span>
-                                <input type="tel" name="phone_number" class="form-control" placeholder="Nomor HP" autocomplete="off" />
+                                <input type="tel" name="phone_number" class="form-control" placeholder="Nomor HP" autocomplete="off">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Email</label>
+                                <label class="form-label required">Email</label>
                                 <input type="text" class="form-control" name="email" placeholder="Email">
                             </div>
                             <div>

@@ -49,13 +49,16 @@
                             <td> {{ $customer->type }} </td>
                             <td> Digital </td>
                             <td> {{ $customer->caller}} </td>
-                            <td>@if ($customer->caller)
-                            <a href="{{ route('customers_detail', $customer->id) }}"
+                            <td>
+                            @if (Auth::check())
+                                @if ($customer->caller != Auth::user()->name)
+                                <a href="{{ route('customers_detail', $customer->id) }}"
                                     class="btn btn-secondary disabled" disabled>Detail</a>
                                 @else
                                 <a href="{{ route('customers_detail', $customer->id) }}"
                                     class="btn btn-primary">Detail</a>
-                                @endif</td>
+                                @endif
+                            @endif</td>
                         </tr>
                         @endforeach
                     </tbody>
