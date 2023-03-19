@@ -16,56 +16,22 @@
                 <h2 class="mt-5">Call in Progress</h2>
                 <div class="modal-body mx-auto">
                     <div class="btn-group-vertical  my-5" role="group" aria-label="Basic example">
-                        <input id="phoneNumber" type="tel"></input>
-                        <div class="btn-group btn-group-lg ">
-                            <button type="button"
-                                class="btn btn-outline-secondary border-bottom-0 rounded-0 btnNumber">1</button>
-                            <button type="button" class="btn btn-outline-secondary border-bottom-0 btnNumber">2</button>
-                            <button type="button"
-                                class="btn btn-outline-secondary border-bottom-0 rounded-0 btnNumber">3</button>
-                        </div>
-                        <div class="btn-group btn-group-lg">
-                            <button type="button"
-                                class="btn btn-outline-secondary border-bottom-0 rounded-0 btnNumber">4</button>
-                            <button type="button" class="btn btn-outline-secondary border-bottom-0 btnNumber">5</button>
-                            <button type="button"
-                                class="btn btn-outline-secondary border-bottom-0 rounded-0 btnNumber">6</button>
-                        </div>
-                        <div class="btn-group btn-group-lg">
-                            <button type="button" class="btn btn-outline-secondary rounded-0 btnNumber">7</button>
-                            <button type="button" class="btn btn-outline-secondary btnNumber">8</button>
-                            <button type="button" class="btn btn-outline-secondary rounded-0 btnNumber">9</button>
-                        </div>
-                        <div class="btn-group btn-group-lg">
-                            <button type="button" class="btn btn-outline-secondary rounded-0 btnNumber">*</button>
-                            <button type="button" class="btn btn-outline-secondary btnNumber">0</button>
-                            <button type="button" class="btn btn-outline-secondary rounded-0 btnNumber"><span
-                                    class="small">#</span></button>
-                        </div>
-                        <div class="btn-group btn-group-lg">
-                            <button id="btnDial" type="button" class="btn btn-outline-secondary rounded-0">
-                                <i class="fa fa-phone-square fa-flip-horizontal  fa-2x" style="color: green;"
-                                    aria-hidden="true"></i> </button>
-                            <button type="button" class="btn btn-outline-secondary btnNumber">+</button>
-                            <button id="btnDelete" type="button" class="btn btn-outline-secondary rounded-0">
-                                <i class="fa fa-backspace fa-1x" aria-hidden="true"></i>
-                            </button>
-                        </div>
+                        <img src="./static/landing-assets/user.png" alt="">
                     </div>
                 </div>
                 <!-- Modal Footer -->
                 <div class="modal-footer mx-auto">
-                    <a href="{{ route('customers_list') }}" type="button" class="btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-x" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
+                    <button href="#" class="btn btn-danger btn-icon" aria-label="Button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-off"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 21l18 -18"></path>
                             <path
-                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
+                                d="M5.831 14.161a15.946 15.946 0 0 1 -2.831 -8.161a2 2 0 0 1 2 -2h4l2 5l-2.5 1.5c.108 .22 .223 .435 .345 .645m1.751 2.277c.843 .84 1.822 1.544 2.904 2.078l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a15.963 15.963 0 0 1 -10.344 -4.657">
                             </path>
-                            <path d="M16 4l4 4m0 -4l-4 4"></path>
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

@@ -53,13 +53,13 @@
                                 @if (Auth::check())
                                     @if ($customer->caller == Auth::user()->name)
                                     <a href="{{ route('customers_detail', $customer->id) }}"
-                                        class="btn btn-primary">Detail</a>
+                                        class="btn btn-primary btn-pill">Detail</a>
                                     @elseif ($customer->caller)
                                     <a href="{{ route('customers_detail', $customer->id) }}"
-                                        class="btn btn-primary disabled">Detail</a>
+                                        class="btn btn-primary btn-pill disabled">Detail</a>
                                     @else
                                     <a href="{{ route('customers_detail', $customer->id) }}"
-                                        class="btn btn-primary">Detail</a>
+                                        class="btn btn-primary btn-pill">Detail</a>
                                     @endif
                                 @endif
                             </td>

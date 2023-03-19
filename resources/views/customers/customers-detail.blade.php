@@ -284,18 +284,89 @@
                                 <div class="mb-3 row">
                                     <label class="col-3 col-form-label" for="phone_number">Phone Number</label>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" name="phone_number_masked" id="phone_number_masked"
-                                            aria-describedby="phoneHelp" value="{{$customer->phone_number_masked}}" disabled>
+                                        <input type="text" class="form-control" name="phone_number_masked"
+                                            id="phone_number_masked" aria-describedby="phoneHelp"
+                                            value="{{$customer->phone_number_masked}}" disabled>
                                     </div>
-                                    <div class="col-6" style="display:none;">
+                                    <div class="col-4" style="display:none;">
                                         <input type="text" class="form-control" name="phone_number" id="phone_number"
                                             aria-describedby="phoneHelp" value="{{$customer->phone_number}}" disabled>
                                     </div>
                                     <div class="col-3">
-                                        <button type="submit" class="btn btn-success">Call</button>
+                                        <button type="submit" class="btn btn-success"><svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="icon icon-tabler icon-tabler-phone" width="24" height="24"
+                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path
+                                                    d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
+                                                </path>
+                                            </svg>Call</button>
                                     </div>
                                 </div>
                             </form>
+                            @if (isset($success) && $success)
+                            <div class="modal show" style="display:block" id="exampleModal" tabindex="-1">
+                                <div class="modal-dialog modal-sm" role="document">
+                                    <div class="modal-content">
+                                        <a href="{{ route('customers_detail', $customer->id) }}" type="button"
+                                            class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+                                        <div class="modal-status bg-success">
+
+                                        </div>
+                                        <div class="text-center">
+                                            <h1 class="mt-5 text-center">Call in Progress</h1>
+                                            <label id="minutes">00</label>:<label id="seconds">00</label>
+                                        </div>
+                                        <div class="modal-body mx-auto mb-4">
+                                            <div class="btn-group-vertical" role="group" aria-label="Basic example">
+
+                                                <img src="{{ asset('static/landing-assets/user.png') }}" alt="">
+                                            </div>
+                                        </div>
+                                        <!-- Modal Footer -->
+                                        <div class="modal-footer mx-auto mb-5">
+                                        <a type="button" href="{{ route('customers_detail', $customer->id) }}" class="btn btn-danger btn-icon"
+                                                    aria-label="Button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-phone-off" width="24"
+                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path d="M3 21l18 -18"></path>
+                                                        <path d="M5.831 14.161a15.946 15.946 0 0 1 -2.831 -8.161a2 2 0 0 1 2 
+                                                            -2h4l2 5l-2.5 1.5c.108 .22 .223 .435 .345 .645m1.751 2.277c.843 
+                                                            .84 1.822 1.544 2.904 2.078l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a15.963 
+                                                            15.963 0 0 1 -10.344 -4.657">
+                                                        </path>
+                                                    </svg>
+                                                </a>
+                                           <!-- <form class="card" action="{{ route('terminate_call', $call->sid) }}"
+                                                method="post">
+                                                <button type="submit" class="btn btn-danger btn-icon"
+                                                    aria-label="Button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-phone-off" width="24"
+                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path d="M3 21l18 -18"></path>
+                                                        <path d="M5.831 14.161a15.946 15.946 0 0 1 -2.831 -8.161a2 2 0 0 1 2 
+                                                            -2h4l2 5l-2.5 1.5c.108 .22 .223 .435 .345 .645m1.751 2.277c.843 
+                                                            .84 1.822 1.544 2.904 2.078l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a15.963 
+                                                            15.963 0 0 1 -10.344 -4.657">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </form>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
                             <form class="" action="{{ route('customers_update_call_result', $customer->id)}}"
                                 method="post">
                                 @csrf
@@ -364,7 +435,8 @@
                                     <label class="col-3 col-form-label">Caller</label>
                                     <div class="col">
                                         @if (Auth::check())
-                                        <input type="text" class="form-control" name="caller" id="caller" value="{{ Auth::user()->name }}">
+                                        <input type="text" class="form-control" name="caller" id="caller"
+                                            value="{{ Auth::user()->name }}">
                                         @endif
                                         </input>
                                     </div>

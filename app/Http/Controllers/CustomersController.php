@@ -79,6 +79,11 @@ class CustomersController extends Controller
         $customer->save();
 
         return redirect()->back();
+
+        //return view('customers.customers-detail', ['id' => $id,
+        //'customer' => $customer],
+        //'users' => User::get())
+        //->with('success','true');
     }
 
     public function update_call_result(Request $request, $id)

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Twilio\Exceptions\RestException;
 use Twilio\Rest\Client;
 use App\Models\Customer;
+use App\Models\User;
 
 class VoiceController extends Controller
 {
@@ -52,7 +53,13 @@ class VoiceController extends Controller
           );
 
         if($call) {
-          return redirect()->route('call_process')->withHeaders(['target' => '_blank']);
+          return view('customers.customers-detail', ['id' => $id,
+                    'customer' => $customer,
+                    'call' => $call,
+                    'users' => User::get()])
+                    ->with('success','true');
+          return redirect()->back()->with('success', true);  
+          //return redirect()->route('call_process')->withHeaders(['target' => '_blank']);
           //return view('call-process');
         } else {
           echo 'Call failed!';
@@ -63,5 +70,18 @@ class VoiceController extends Controller
     } catch (RestException $rest) {
       echo 'Error: ' . $rest->getMessage();
     }
+  }
+
+  public function terminateCall($sid){
+
+    $twilio = new Client($this->account_sid, $this->auth_token);
+
+    $calls = $twilio->calls($sid)
+               ->fetch();
+    dd($calls);
+    $call = $this->client->account->calls($sid)
+                   ->update(["status" => "completed"]);
+
+    return redirect()->back();
   }
 }

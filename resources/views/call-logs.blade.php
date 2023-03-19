@@ -45,7 +45,7 @@
                             <td>{{ $call->from }} </td>
                             <td>{{ $call->to }} </td>
                             <td>{{ $call->status}} </td>
-                            <td><a href="{{ route('logs_detail', $call->sid) }}" class="btn btn-success">Detail</a></td>
+                            <td><a href="{{ route('logs_detail', $call->sid) }}" class="btn btn-primary btn-pill">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>
