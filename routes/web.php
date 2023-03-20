@@ -19,14 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard');
-});
+})->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/customers-list', [CustomersController::class, 'customer_list_index'])->name('customers_list');
-Route::get('/customers-detail/{id}', [CustomersController::class, 'customer_detail_index'])->name('customers_detail');
+Route::get('/customers-list', [CustomersController::class, 'customer_list_index'])->middleware(['auth', 'verified'])->name('customers_list');
+Route::get('/customers-detail/{id}', [CustomersController::class, 'customer_detail_index'])->middleware(['auth', 'verified'])->name('customers_detail');
 Route::put('/customers-detail/{id}/update_profile', [CustomersController::class, 'update_profile'])->name('customers_update_profile');
 Route::put('/customers-detail/{id}/update_call_result', [CustomersController::class, 'update_call_result'])->name('customers_update_call_result');
 Route::put('/customers-detail/{id}/update_simulasi', [CustomersController::class, 'update_simulasi'])->name('customers_update_simulasi');
@@ -34,8 +34,8 @@ Route::get('/customers-landing', [CustomersController::class, 'customer_landing_
 Route::post('/customers-landing', [CustomersController::class, 'store'])->name('customers_store');
 Route::post('/call/{id}', [VoiceController::class, 'initiateCall'])->name('initiate_call');
 Route::post('/terminate-call/{id}', [VoiceController::class, 'terminateCall'])->name('terminate_call');
-Route::get('/call-logs', [VoiceLogController::class, 'getLogs'])->name('get_logs');
-Route::get('/call-logs-detail/{sid}', [VoiceLogController::class, 'getLogsDetail'])->name('logs_detail');
+Route::get('/call-logs', [VoiceLogController::class, 'getLogs'])->middleware(['auth', 'verified'])->name('get_logs');
+Route::get('/call-logs-detail/{sid}', [VoiceLogController::class, 'getLogsDetail'])->middleware(['auth', 'verified'])->name('logs_detail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

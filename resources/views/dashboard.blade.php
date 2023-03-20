@@ -38,12 +38,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="h1 mb-3">75%</div>
+                            <div class="h1 mb-3">0%</div>
                             <div class="d-flex mb-2">
                                 <div>Conversion rate</div>
                                 <div class="ms-auto">
                                     <span class="text-green d-inline-flex align-items-center lh-1">
-                                        7%
+                                        0%
                                         <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -81,10 +81,10 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-baseline">
-                                <div class="h1 mb-0 me-2">$4,300</div>
+                                <div class="h1 mb-0 me-2">Rp-</div>
                                 <div class="me-auto">
                                     <span class="text-green d-inline-flex align-items-center lh-1">
-                                        8%
+                                        0%
                                         <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-baseline">
-                                <div class="h1 mb-3 me-2">6,782</div>
+                                <div class="h1 mb-3 me-2">-</div>
                                 <div class="me-auto">
                                     <span class="text-yellow d-inline-flex align-items-center lh-1">
                                         0%
@@ -152,10 +152,10 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-baseline">
-                                <div class="h1 mb-3 me-2">2,986</div>
+                                <div class="h1 mb-3 me-2">-</div>
                                 <div class="me-auto">
                                     <span class="text-green d-inline-flex align-items-center lh-1">
-                                        4%
+                                        0%
                                         <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -191,10 +191,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                132 Sales
+                                                - Sales
                                             </div>
                                             <div class="text-muted">
-                                                12 waiting payments
+                                                - waiting payments
                                             </div>
                                         </div>
                                     </div>
@@ -221,10 +221,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                78 Inquiy
+                                                - Inquiy
                                             </div>
                                             <div class="text-muted">
-                                                32 Waiting Call
+                                                - Waiting Call
                                             </div>
                                         </div>
                                     </div>
@@ -250,10 +250,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                623 New Customer
+                                                - New Customer
                                             </div>
                                             <div class="text-muted">
-                                                16 today
+                                                - today
                                             </div>
                                         </div>
                                     </div>
@@ -279,10 +279,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                132 New Credit
+                                                - New Credit
                                             </div>
                                             <div class="text-muted">
-                                                21 today
+                                                - today
                                             </div>
                                         </div>
                                     </div>
