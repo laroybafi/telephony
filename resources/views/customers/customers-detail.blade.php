@@ -426,7 +426,7 @@
                                     <label class="col-3 col-form-label pt-0">Blacklist</label>
                                     <div class="col">
                                         <label class="form-check">
-                                            <input class="form-check-input" type="checkbox" checked>
+                                            <input class="form-check-input" type="checkbox">
                                             <span class="form-check-label"></span>
                                         </label>
                                     </div>
