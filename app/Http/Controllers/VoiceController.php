@@ -49,7 +49,7 @@ class VoiceController extends Controller
           $this->from, // Valid Twilio phone number
           array(
               "record" => True,
-              "url" => "http://demo.twilio.com/docs/voice.xml")
+              "twiml" => "<Response><Say>Selamat datang di layanan telepon Astra Credit Companies, kami berdedikasi memberikan informasi dan solusi terbaik untuk kebutuhan anda. Jangan ragu untuk menghubungi kami jika Anda memerlukan bantuan atau informasi lebih lanjut. Terima kasih telah memilih layanan kami.</Say></Response>")
           );
 
         if($call) {
