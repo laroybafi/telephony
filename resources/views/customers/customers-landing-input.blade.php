@@ -123,7 +123,7 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label required">Refferal Code</label>
+                                <label class="form-label">Refferal Code</label>
                                 <input type="text" class="form-control" name="refferal_code"
                                     placeholder="Refferal Code">
                             </div> <br>
